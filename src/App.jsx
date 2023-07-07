@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import './App.css'
+import Display from './components/display/Display'
+
 
 function App() {
 
   return (
     <>
       <div>
-        Hello world
+        <Display />
       </div>
     </>
   )
