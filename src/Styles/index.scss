@@ -1,0 +1,10 @@
+@import "./_theme.scss";
+
+
+.test {
+
+  @include themed() {
+    color: t('text-light');
+    background: t('bg-main');
+  }
+}

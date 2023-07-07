@@ -2,7 +2,11 @@ import React from 'react'
 
 const Display = () => {
   return (
-    <div>Display</div>
+    <div className='theme--theme1'>
+      <div className='test'>
+        Display
+      </div>
+    </div>
   )
 }
 

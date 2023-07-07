@@ -1,0 +1,61 @@
+$themes: (
+  theme1: (
+    bg-main: hsl(222, 26%, 31%),
+    bg-keypad: hsl(223, 31%, 20%),
+    bg-screen-toggle: hsl(224, 36%, 15%),
+    k-reset-del: hsl(225, 21%, 49%),
+    k-reset-del-shadow: hsl(224, 28%, 35%),
+    k-equals-toggle: hsl(6, 63%, 50%),
+    k-equals-toggle-shadow: hsl(6, 70%, 34%),
+    k-main: hsl(30, 25%, 89%),
+    k-shadow: hsl(28, 16%, 65%),
+    text-dark: hsl(221, 14%, 31%),
+    text-light: hsl(0, 0%, 100%),
+  ),
+  theme2: (
+    bg-main: hsl(0, 0%, 90%),
+    bg-keypad: hsl(0, 5%, 81%),
+    bg-screen-toggle: hsl(0, 0%, 93%),
+    k-reset-del: hsl(185, 42%, 37%),
+    k-reset-del-shadow: hsl(185, 58%, 25%),
+    k-equals-toggle: hsl(25, 98%, 40%),
+    k-equals-toggle-shadow: hsl(25, 99%, 27%),
+    k-main: hsl(45, 7%, 89%),
+    k-shadow: hsl(35, 11%, 61%),
+    text-dark: hsl(60, 10%, 19%),
+    text-light: hsl(0, 0%, 100%),
+  ),
+  theme3: (
+    bg-main: hsl(268, 75%, 9%),
+    bg-keypad: hsl(268, 71%, 12%),
+    bg-screen-toggle: hsl(268, 71%, 12%),
+    k-reset-del: hsl(281, 89%, 26%),
+    k-reset-del-shadow: hsl(285, 91%, 52%),
+    k-equals-toggle: hsl(176, 100%, 44%),
+    k-equals-toggle-shadow: hsl(177, 92%, 70%),
+    k-main: hsl(268, 47%, 21%),
+    k-shadow: hsl(290, 70%, 36%),
+    text-dark: hsl(198, 20%, 13%),
+    text-light: hsl(52, 100%, 62%),
+  )
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
+
