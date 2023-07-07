@@ -1,0 +1,51 @@
+@import "../../Styles/theme";
+
+.keyPad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+
+  @include themed() {
+    background: t('bg-keypad');
+    color: t('text-main')
+  }
+
+  button {
+    border: none;
+    border-radius: 10px;
+    font-size: 32px;
+    padding: 20px 0px;
+    width: 20%;
+    margin: 10px;
+
+    @include themed() {
+      background: t('k-main');
+      color: t('text-alt');
+      box-shadow: 0px 4px t('k-shadow');
+    }
+  }
+
+  #reset, #del {
+    @include themed() {
+      background: t('k-reset-del');
+      color: t('text-main');
+      box-shadow: 0px 4px t('k-reset-del-shadow');
+    }
+  }
+
+  #equals {
+    @include themed() {
+      background: t('k-equals-toggle');
+      color: t('text-main');
+      box-shadow: 0px 4px t('k-equals-toggle-shadow');
+    }
+  }
+
+  #equals:hover {
+    filter: brightness(150%);
+  }
+
+}

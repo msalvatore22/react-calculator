@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./display.scss"
 
-const Display = (props) => {
-  const {numbers} = props
+const Display = ({result}) => {
+
   return (
    <div className='display'>
-    {numbers}
+    {result}
    </div>
   )
 }

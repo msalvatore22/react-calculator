@@ -13,7 +13,7 @@ const ThemeToggle = () => {
       <div>
         {
           themeOptions.map((option,idx) => (
-            <button onClick={() => setTheme(option.value)}>
+            <button key={idx} onClick={() => setTheme(option.value)}>
               {idx+1}
             </button>
           ))
