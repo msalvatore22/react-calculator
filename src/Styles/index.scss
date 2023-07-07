@@ -1,10 +1,26 @@
 @import "./_theme.scss";
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'League Spartan', sans-serif;
+}
 
-.test {
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px red solid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 
   @include themed() {
-    color: t('text-light');
     background: t('bg-main');
   }
+}
+
+.calculator {
+  width: 33%;
 }

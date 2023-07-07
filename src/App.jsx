@@ -8,9 +8,11 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div>
-        <ThemeToggle />
-        <Display />
+      <div className='app'>
+        <div className='calculator'>
+          <ThemeToggle />
+          <Display numbers={44} />
+        </div>
       </div>
     </ThemeProvider>
   )

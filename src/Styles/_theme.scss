@@ -9,8 +9,8 @@ $themes: (
     k-equals-toggle-shadow: hsl(6, 70%, 34%),
     k-main: hsl(30, 25%, 89%),
     k-shadow: hsl(28, 16%, 65%),
-    text-dark: hsl(221, 14%, 31%),
-    text-light: hsl(0, 0%, 100%),
+    text-alt: hsl(221, 14%, 31%),
+    text-main: hsl(0, 0%, 100%),
   ),
   theme2: (
     bg-main: hsl(0, 0%, 90%),
@@ -22,8 +22,8 @@ $themes: (
     k-equals-toggle-shadow: hsl(25, 99%, 27%),
     k-main: hsl(45, 7%, 89%),
     k-shadow: hsl(35, 11%, 61%),
-    text-dark: hsl(60, 10%, 19%),
-    text-light: hsl(0, 0%, 100%),
+    text-main: hsl(60, 10%, 19%),
+    text-alt: hsl(0, 0%, 100%),
   ),
   theme3: (
     bg-main: hsl(268, 75%, 9%),
@@ -35,8 +35,8 @@ $themes: (
     k-equals-toggle-shadow: hsl(177, 92%, 70%),
     k-main: hsl(268, 47%, 21%),
     k-shadow: hsl(290, 70%, 36%),
-    text-dark: hsl(198, 20%, 13%),
-    text-light: hsl(52, 100%, 62%),
+    text-alt: hsl(198, 20%, 13%),
+    text-main: hsl(52, 100%, 62%),
   )
 );
 

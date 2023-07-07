@@ -1,3 +1,4 @@
+import "./themeToggle.scss"
 import React, { useContext } from 'react'
 import ThemeContext from '../../contexts/ThemeContext'
 
@@ -7,13 +8,20 @@ const ThemeToggle = () => {
   const { theme, setTheme } = useContext(ThemeContext)
 
   return (
-    <select value={theme} onChange={(e) => setTheme(e.currentTarget.value)}>
-      {themeOptions.map((option, idx) => (
-        <option value={option.value} key={idx}>
-          {option.value}
-        </option>
-      ))}
-    </select>
+    <div className="toggle-box">
+      <h3>calc</h3>
+      <div>
+        {
+          themeOptions.map((option,idx) => (
+            <button onClick={() => setTheme(option.value)}>
+              {idx+1}
+            </button>
+          ))
+        }
+      </div>
+      
+    </div>
+
   )
 }
 

@@ -1,0 +1,17 @@
+@import "../../Styles/theme";
+
+.toggle-box {
+  display: flex;
+  justify-content: space-between;
+
+  @include themed() {
+    color: t('text-main')
+  }
+
+  button {
+    @include themed() {
+      background: t('k-equals-toggle');
+    }
+  }
+}
+

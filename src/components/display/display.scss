@@ -1,0 +1,14 @@
+@import "../../Styles/theme";
+
+.display {
+  display: flex;
+  justify-content: right;
+  padding: 20px;
+  font-size: 40px;
+  border-radius: 10px;
+
+  @include themed() {
+    background: t('bg-screen-toggle');
+    color: t('text-main')
+  }
+}

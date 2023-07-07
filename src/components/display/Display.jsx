@@ -1,12 +1,12 @@
 import React from 'react'
+import "./display.scss"
 
-const Display = () => {
+const Display = (props) => {
+  const {numbers} = props
   return (
-    <div className='theme--theme1'>
-      <div className='test'>
-        Display
-      </div>
-    </div>
+   <div className='display'>
+    {numbers}
+   </div>
   )
 }
 
