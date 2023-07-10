@@ -67,10 +67,10 @@ function App() {
           opf = true
           decf = false
           ev = false
-      } else {
-        const newNumber = num.slice(0, num.length - 1)
-        num = newNumber + key
-      }
+        } else {
+          const newNumber = num.slice(0, num.length - 1)
+          num = newNumber + key
+        }
       break
       case key === 'RESET' :
         num = '0'

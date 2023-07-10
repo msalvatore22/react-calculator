@@ -16,12 +16,10 @@ button:hover {
 }
 
 .app {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px red solid;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -32,8 +30,5 @@ button:hover {
 }
 
 .calculator {
-  width: 33%;
-  display: flex;
-  flex-direction: column;
-  justify-content: sp;
+  width: 480px;
 }
