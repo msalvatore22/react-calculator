@@ -81,7 +81,6 @@ function App() {
         if(num.length === 1){
           num = '0'
         } else {
-          console.log(num)
           num = num.slice(0, -1)
         }
         opf = false
