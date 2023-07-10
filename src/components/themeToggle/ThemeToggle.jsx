@@ -9,7 +9,7 @@ const ThemeToggle = () => {
 
   return (
     <div className="toggle-box">
-      <h3>calc</h3>
+      <h1>calc</h1>
       <div>
         {
           themeOptions.map((option,idx) => (

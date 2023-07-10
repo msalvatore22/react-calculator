@@ -21,7 +21,7 @@ function App() {
     {id: 'decimal', value: '.'},
     {id: 'zero', value: '0'},
     {id: 'divide', value: '/'},
-    {id: 'multiply', value: '*'},
+    {id: 'multiply', value: 'X'},
     {id: 'reset', value: 'RESET'},
     {id: 'equals', value: '='},
   ]

@@ -1,9 +1,9 @@
 @import "../../Styles/theme";
 
 .keyPad {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: [first] 25% [second] 25% [third] 25% [fourth] 25%;
+  grid-template-rows: [first] 20% [second] 20% [third] 20% [fourth] 20%;
   padding: 10px;
   border-radius: 10px;
   margin-top: 20px;
@@ -13,12 +13,28 @@
     color: t('text-main')
   }
 
+  #seven, #four, #one, #decimal {
+    grid-column-start: first;
+  }
+
+  #eight, #five, #two, #zero {
+    grid-column-start: second;
+  }
+
+  #nine, #six, #three, #divide {
+    grid-column-start: third;
+  }
+
+  #reset {
+    grid-column: 1 / span 2;
+  }
+
+
   button {
     border: none;
     border-radius: 10px;
     font-size: 32px;
     padding: 20px 0px;
-    width: 20%;
     margin: 10px;
 
     @include themed() {
@@ -37,6 +53,7 @@
   }
 
   #equals {
+    grid-column: third / span 2;
     @include themed() {
       background: t('k-equals-toggle');
       color: t('text-main');
