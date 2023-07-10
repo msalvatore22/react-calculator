@@ -3,15 +3,47 @@
 .toggle-box {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 
   @include themed() {
     color: t('text-main')
   }
 
+}
+
+
+.theme-toggle {
+  background: rgba(165,170,174,0.25);
+  box-shadow: inset 0 2px 8px 0 rgba(165,170,174,0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-direction: row;
+  transition: all 500ms ease; 
+  display: flex;
+  height: 20px;
+
   button {
+    border-radius: 8px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    background-color: transparent;
+    border: 0px solid transparent;
+    margin: 2px;
+    cursor: pointer;
+  }
+
+  button.active {
     @include themed() {
       background: t('k-equals-toggle');
     }
+    transition: all .5s ease-in;
   }
+
+button:focus {
+  outline: none;
+}
 }
 
