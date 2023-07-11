@@ -1,12 +1,10 @@
 import "./themeToggle.scss"
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ThemeContext from '../../contexts/ThemeContext'
 
 
 const ThemeToggle = () => {
-  let themes = [{ value: "theme1", active: true }, { value: "theme2", active: false }, { value: "theme3", active: false}];
-  const { theme, setTheme } = useContext(ThemeContext)
-  const [themeOptions, setThemeOptions] = useState(themes)
+  const { theme, themeOptions, setTheme, setThemeOptions} = useContext(ThemeContext) 
 
   const handleClick = (idx, option) => {
     setTheme(option.value)
@@ -19,8 +17,6 @@ const ThemeToggle = () => {
     copy[idx]["active"] = true
     setThemeOptions(copy)
   }
-
-
 
   return (
     <div className="toggle-box">
