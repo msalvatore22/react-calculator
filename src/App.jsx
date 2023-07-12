@@ -21,7 +21,7 @@ function App() {
     {id: 'decimal', value: '.'},
     {id: 'zero', value: '0'},
     {id: 'divide', value: '/'},
-    {id: 'multiply', value: 'X'},
+    {id: 'multiply', value: '*'},
     {id: 'reset', value: 'RESET'},
     {id: 'equals', value: '='},
   ]
@@ -38,6 +38,24 @@ function App() {
     let decf = decimalFlag
 
     switch(true){
+      case key === 'RESET' :
+          num = '0'
+          opf = false
+          decf = false
+          ev = false
+        break
+      case key === 'DEL' :
+        if(num.length === 1){
+          num = '0'
+        } else {
+          num = num.slice(0, -1)
+        }
+        opf = false
+        decf = false
+        ev = false
+        break
+      case num.length >= 12:
+        break
       case key === '0' ||
            key === '1' ||
            key === '2' ||
@@ -57,12 +75,17 @@ function App() {
         } else {
           num = key
         }
-      break
+        break
       case key === '+' ||
            key === '-' ||
            key === '/' ||
            key === '*' :
-        if(!operatorFlag){
+        if(currentNumber === '0' && !operatorFlag && key === '-'){
+          num = key
+          opf = true
+          decf = false
+          ev = false
+        } else if (!operatorFlag){
           num += key
           opf = true
           decf = false
@@ -71,27 +94,12 @@ function App() {
           const newNumber = num.slice(0, num.length - 1)
           num = newNumber + key
         }
-      break
-      case key === 'RESET' :
-        num = '0'
-        opf = false
-        decf = false
-        ev = false
-      case key === 'DEL' :
-        if(num.length === 1){
-          num = '0'
-        } else {
-          num = num.slice(0, -1)
-        }
-        opf = false
-        decf = false
-        ev = false
-      break
+        break
       case key === '=' :
-        num = eval(num).toString()
+        num = eval(num).toLocaleString()
         opf = false
         ev = true
-      break 
+        break 
       case key === '.' :
         if(!decimalFlag && evaluated === false){
           num += '.'
